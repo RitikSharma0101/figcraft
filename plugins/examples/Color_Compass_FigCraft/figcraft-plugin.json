@@ -1,0 +1,58 @@
+{
+  "id": "org.colorcompass.figcraft",
+  "name": "Color Compass",
+  "version": "0.1.0",
+  "description": "Generate colour harmony palettes and add swatches to the FigCraft canvas.",
+  "main": "color_compass.wasm",
+  "api": 2,
+  "author": "Community",
+  "permissions": {
+    "access": "write",
+    "commands": [
+      "view.get",
+      "shape.rectangle",
+      "text.create",
+      "select.set"
+    ]
+  },
+  "commands": [
+    {
+      "id": "panel",
+      "label": "Color Compass\u2026"
+    },
+    {
+      "id": "grid",
+      "label": "Create palette swatches\u2026",
+      "params": [
+        {
+          "name": "hex",
+          "label": "Base colour (HEX)",
+          "type": "color",
+          "default": "#3878E8"
+        },
+        {
+          "name": "harmony",
+          "label": "Harmony",
+          "type": "select",
+          "options": [
+            "Complementary",
+            "Analogous",
+            "Triadic",
+            "Split complementary",
+            "Tetradic",
+            "Shades"
+          ],
+          "default": "Complementary"
+        },
+        {
+          "name": "steps",
+          "label": "Swatches",
+          "type": "number",
+          "default": 5,
+          "min": 3,
+          "max": 12
+        }
+      ]
+    }
+  ]
+}
